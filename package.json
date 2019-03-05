@@ -1,0 +1,52 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-client": "webpack",
+    "build-client-watch": "webpack -w",
+    "start": "NODE_ENV='development' webpack-dev-server --content-base public/",
+    "start-server": "nodemon server -e html,js,scss --ignore public --ignore client"
+  },
+  "author": "",
+  "license": "ISC",
+  "proxy": "http://localhost:3001",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "history": "^4.7.2",
+    "http-errors": "^1.7.1",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7",
+    "react": "^16.3.1",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.1.1",
+    "socket.io": "^2.0.3",
+    "superagent": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/polyfill": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-react": "^7.0.0-beta.40",
+    "@babel/preset-stage-2": "^7.0.0-beta.40",
+    "@babel/register": "^7.0.0-beta.40",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^8.0.0-beta.2",
+    "eslint": "^4.19.1",
+    "eslint-config-fullstack": "^5.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-react": "^7.7.0",
+    "firebase-functions": "^2.0.5",
+    "nodemon": "^1.17.5",
+    "prettier": "1.11.1",
+    "redux-devtools-extension": "^2.13.2",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.14"
+  }
+}

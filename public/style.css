@@ -1,0 +1,283 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans';
+}
+
+.page {
+  background-color: white;
+}
+
+.section {
+  background-color: #f9f9f9;
+  margin: 0vh 4vw;
+  padding: 4vh 4vw;
+}
+
+.subsection1 {
+  width: 49%;
+  display: inline-block;
+}
+.subsection2 {
+  width: 40%;
+  display: inline-block;
+  position: relative;
+  margin-left: 4vw;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  /* background: white; */
+  border: 1px solid #e8e8e8;
+  width: 33vw;
+}
+
+.dropdown:hover {
+  background: white;
+}
+
+.button {
+  width: 500px;
+  height: 50px;
+  /* background-color: #ffffff; */
+  padding: 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+}
+.button:before {
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border: 10px solid;
+  border-color: rgb(44, 41, 41) transparent transparent transparent;
+  right: 6px;
+  top: 30px;
+}
+
+.dollar-sign {
+  height: 50px;
+  width: 50px;
+}
+
+.drop-header {
+  color: black;
+  position: absolute;
+  top: 25px;
+  margin-left: 10px;
+}
+
+.drop-text {
+  color: black;
+  margin: 3vh 0vw 6vh 3vw;
+}
+
+.slider {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.card1 {
+  width: 27vw;
+  display: inline-block;
+  position: relative;
+  left: -42vw;
+  height: 80vh;
+  background-color: white;
+  animation-name: fadeOut;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.card2 {
+  width: 27vw;
+  display: inline-block;
+  position: relative;
+  left: -44vw;
+  height: 80vh;
+  background-color: white;
+  z-index: 3;
+  animation-name: slide;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+}
+
+@keyframes slide {
+  0% {
+    left: -44vw;
+  }
+  100% {
+    left: -15vw;
+  }
+}
+
+.card3 {
+  width: 27vw;
+  position: relative;
+  height: 80vh;
+  background-color: white;
+  left: -17vw;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+}
+
+.card-jpg {
+  width: 27vw;
+  border-radius: 5px 5px 0 0;
+}
+
+.card-svg {
+  width: 8vw;
+  margin: 0vh 9vw;
+}
+
+.card-txt {
+  text-align: center;
+  margin: 3vh 0vw;
+}
+
+.new {
+  color: white;
+  letter-spacing: 1px;
+  left: 15px;
+  top: 15px;
+  position: absolute;
+  font-size: 12px;
+  border-radius: 100px;
+  background: #ff5152;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  width: 50px;
+  text-align: center;
+}
+
+.pulse {
+  border-radius: 50%;
+  background: #e9242d;
+
+  box-shadow: 0 0 0 rgba(231, 34, 34, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(231, 34, 34, 0.4);
+    box-shadow: 0 0 0 0 rgba(231, 34, 34, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(231, 34, 34, 0);
+    box-shadow: 0 0 0 10px rgba(231, 34, 34, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(231, 34, 34, 0);
+    box-shadow: 0 0 0 0 rgba(231, 34, 34, 0);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .subsection1 {
+    width: 80%;
+  }
+  .subsection2 {
+    width: 80%;
+    height: 70vh;
+    margin-top: 5vh;
+  }
+  .card1 {
+    height: 55vh;
+    width: 45vw;
+    left: -68vw;
+  }
+  .card2 {
+    height: 55vh;
+    width: 45vw;
+    left: -69vw;
+  }
+  .card3 {
+    height: 55vh;
+    width: 45vw;
+    left: -24vw;
+  }
+  .card-jpg {
+    width: 45vw;
+  }
+  .card-svg {
+    width: 12vw;
+  }
+  @keyframes slide {
+    0% {
+      left: -69vw;
+    }
+    100% {
+      left: -22vw;
+    }
+  }
+  .dropdown {
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .subsection1 {
+    width: 95%;
+  }
+  .subsection2 {
+    width: 95%;
+    height: 70vh;
+    margin-top: 5vh;
+  }
+  .card1 {
+    height: 50vh;
+    width: 65vw;
+    left: -115vw;
+  }
+  .card2 {
+    height: 50vh;
+    width: 65vw;
+    left: -120vw;
+  }
+  .card3 {
+    height: 50vh;
+    width: 65vw;
+    left: -55vw;
+  }
+  .card-jpg {
+    width: 65vw;
+  }
+  .card-svg {
+    width: 20vw;
+    margin-left: 22vw;
+  }
+  .card-txt {
+    font-size: 12px;
+  }
+  @keyframes slide {
+    0% {
+      left: -120vw;
+    }
+    100% {
+      left: -52vw;
+    }
+  }
+  .dropdown {
+    width: 82vw;
+  }
+}
