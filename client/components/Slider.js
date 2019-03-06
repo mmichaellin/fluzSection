@@ -33,7 +33,8 @@ export default class Slider extends Component {
       ],
       fadeOut: 0,
       transition: 1,
-      display: 2
+      display: 2,
+      mounted: true
       // intID
     }
     this.changeCard = this.changeCard.bind(this)
@@ -59,40 +60,48 @@ export default class Slider extends Component {
     })
   }
   componentDidMount() {
-    let intID = setInterval(this.changeCard, 3000)
+    let intID = setInterval(this.changeCard, 7000)
     this.setState({
-      intID: intID
+      intID: intID,
+      mounted: true
     })
   }
   componentWillMount() {
     if (this.state.intID) {
       clearInterval(this.state.intID)
     }
+    this.setState({
+      mounted: false
+    })
   }
   render() {
     return (
       <div className="slider">
-        <Card
-          store={this.state.highlights[this.state.display].store}
-          jpg={this.state.highlights[this.state.display].jpg}
-          svg={this.state.highlights[this.state.display].svg}
-          txt={this.state.highlights[this.state.display].txt}
-          priority={3}
-        />
-        <Card
-          store={this.state.highlights[this.state.transition].store}
-          jpg={this.state.highlights[this.state.transition].jpg}
-          svg={this.state.highlights[this.state.transition].svg}
-          txt={this.state.highlights[this.state.transition].txt}
-          priority={2}
-        />
-        <Card
-          store={this.state.highlights[this.state.fadeOut].store}
-          jpg={this.state.highlights[this.state.fadeOut].jpg}
-          svg={this.state.highlights[this.state.fadeOut].svg}
-          txt={this.state.highlights[this.state.fadeOut].txt}
-          priority={1}
-        />
+        {this.state.mounted ? (
+          <React.Fragment>
+            <Card
+              store={this.state.highlights[this.state.display].store}
+              jpg={this.state.highlights[this.state.display].jpg}
+              svg={this.state.highlights[this.state.display].svg}
+              txt={this.state.highlights[this.state.display].txt}
+              priority={3}
+            />
+            <Card
+              store={this.state.highlights[this.state.transition].store}
+              jpg={this.state.highlights[this.state.transition].jpg}
+              svg={this.state.highlights[this.state.transition].svg}
+              txt={this.state.highlights[this.state.transition].txt}
+              priority={2}
+            />
+            <Card
+              store={this.state.highlights[this.state.fadeOut].store}
+              jpg={this.state.highlights[this.state.fadeOut].jpg}
+              svg={this.state.highlights[this.state.fadeOut].svg}
+              txt={this.state.highlights[this.state.fadeOut].txt}
+              priority={1}
+            />
+          </React.Fragment>
+        ) : null}
       </div>
     )
   }
