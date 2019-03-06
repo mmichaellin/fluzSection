@@ -60,7 +60,7 @@ export default class Slider extends Component {
     })
   }
   componentDidMount() {
-    let intID = setInterval(this.changeCard, 7000)
+    let intID = setInterval(this.changeCard, 3000)
     this.setState({
       intID: intID,
       mounted: true
