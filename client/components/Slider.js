@@ -34,7 +34,7 @@ export default class Slider extends Component {
       fadeOut: 0,
       transition: 1,
       display: 2,
-      mounted: true
+      mounted: false
       // intID
     }
     this.changeCard = this.changeCard.bind(this)
